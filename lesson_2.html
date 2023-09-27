@@ -15,7 +15,7 @@
         }
 
         button {
-            width: 50px;
+            width: 60px;
             height: 32px;
             border-radius: 3px;
         }
@@ -29,6 +29,7 @@
             <div>
                 <input v-model="multy" type="number">
                 <button @click="viewResult()">VIEW</button>
+                <button @click="resetResult()">RESET</button>
                 <p v-for="item in result" :key="item.id">
                     {{ item }}
                 </p>
@@ -48,6 +49,9 @@
                         for (let i = 1; i < 10; i++) {
                             this.result.push(this.multy + '*' + i + '=' + i * this.multy);
                         }
+                    },
+                    resetResult() {
+                        this.result = [];
                     }
                 }
             })
